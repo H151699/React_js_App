@@ -22,28 +22,34 @@ export class Todoitem extends Component {
     } //getTstle
 
   /********** markComplete() ********************/
-    markCcomplete (e){
-      console.log(this.props)
-    }
+    // markCcomplete (e){
+    //   console.log(this.props)
+    // }
 
 
   /********** render()****** ********************/
     render() {
+      const {id, title} = this.props.td;
+
+
     return (
         // style background of the todoItems
-        // add CheckBox and onChangeListenner
+        // add CheckBox and onChangeListenner; Call markComplete method when Check the checkbox
+        
       <div style ={this.getStyle()}>
 
         
         <p> 
-            <input type="checkbox" onChange={this.markCcomplete.bind(this)}/>{' '} 
-          {/* <input type="checkbox" onChange={this.markCcomplete.bind(this)}/>{' '}  */}
-            
+           <input type="checkbox" onChange = {this.props.markComplete
+            .bind(this, id)}/>{' '}
+                  {title} 
+                   
+                   <button onClick={this.props.delTodo.bind(this, id)} style = {btnStyle}> X</button>
         </p>
+       
 
-         <p> {this.props.td.title} </p>
       </div>
-      // test git
+      
     )
   }
 }
@@ -52,6 +58,18 @@ export class Todoitem extends Component {
 Todoitem.propTypes = {
     td: PropTypes.object.isRequired
 }
+
+// Button Style
+const btnStyle = {
+  backgournd: '#ff0000',
+  color: '#fff',
+  border:'none',
+  padding:'5px 9px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+  float: 'right'
+}
+
 
 
 
