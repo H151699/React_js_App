@@ -56,7 +56,10 @@ export class Todoitem extends Component {
 
 // PropTypes
 Todoitem.propTypes = {
-    td: PropTypes.object.isRequired
+    td: PropTypes.object.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired
+
 }
 
 // Button Style
