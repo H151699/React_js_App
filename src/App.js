@@ -8,7 +8,7 @@ class App extends Component {
   // components states
   state = {
     // objects
-    todos: [
+    todos: [  
       {
         id: 1, 
         title: 'Throw the trash', 
