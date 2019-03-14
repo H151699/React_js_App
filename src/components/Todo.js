@@ -4,9 +4,14 @@ import PropTypes from 'prop-types';
 
 
 class Todo extends Component {
+ 
+
   render() {
     return this.props.todos.map((td) => ( // like forEach loop
-       <Todoitem key={td.id} td = {td} />
+       <Todoitem key={td.id} td = {td} 
+          markComplete = {this.props.markComplete}
+            delTodo ={ this.props.delTodo}
+       />
     ));
   }
 }
